@@ -1,0 +1,22 @@
+.page-404 {
+  text-align: left; // Aligner le texte à gauche
+  color: white;
+  background-color: #050A3A; // Couleur de fond similaire à l'image
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; // Aligner les éléments à gauche
+  padding-left: 8%; // Marge gauche de 8%
+  padding-top: 80;
+  padding-bottom: rem(44);
+
+  h1 {
+    @include heading7;
+    margin-bottom: rem(44);
+  }
+
+  p {
+    @include paragraphe1;
+    margin-bottom: rem(61);
+
+  }
+}

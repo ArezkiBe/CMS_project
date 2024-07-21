@@ -1,0 +1,110 @@
+$color-primary: #050a3a;
+$color-white: #ffffff;
+$color-highlight: #ff007f;
+
+.site-header {
+  background-color: $color-primary; // Couleur de fond correspondante
+  padding: rem(48) 8% rem(45) 8%; // Marges de 8% sur les côtés et rem(48) en haut et rem(45) en bas
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logo {
+    img {
+      width: rem(133);
+      height: rem(40);
+      top: rem(50);
+      left: rem(160);
+      gap: rem(0);
+      opacity: rem(0);
+    }
+  }
+
+  .burger-menu {
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+
+    .nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      .logo {
+        display: flex;
+        flex-direction: column;
+
+        img {
+          width: rem(133);
+          height: rem(40);
+          top: rem(50);
+          left: rem(160);
+          gap: rem(0);
+          opacity: rem(0);
+        }
+
+        p {
+          color: $color-white;
+          margin: 0;
+          font-size: rem(14);
+        }
+      }
+
+      .close-menu {
+        cursor: pointer;
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      list-style: none;
+      padding: 0;
+      margin-top: rem(37); // rem(37) d'espace entre la première ligne et la liste
+      margin-bottom: rem(30);
+
+      .nav-item {
+        margin-bottom: rem(15);
+
+        a {
+          color: $color-white;
+          font-family: $font3;
+          font-size: rem(50);
+          font-weight: 600;
+          line-height: rem(68);
+          text-align: left;
+          position: relative;
+          text-decoration: none;
+        }
+
+        &.current-menu-item {
+          a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: rem(-5);
+            height: rem(2);
+            width: 100%;
+            background-color: $color-highlight; // Couleur de soulignement
+          }
+        }
+      }
+    }
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+}

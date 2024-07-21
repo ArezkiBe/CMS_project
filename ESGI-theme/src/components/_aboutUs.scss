@@ -1,0 +1,135 @@
+.about-us-container {
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-family: $font3;
+    font-size: rem(84);
+    font-weight: 600;
+    line-height: rem(105);
+    text-align: left;
+    margin-bottom: rem(128);
+    margin-top: rem(77);
+    padding-left: 8%; // Marge gauche de 8%
+    padding-right: 8%;
+    color: var(--blue);
+  }
+
+  .about-us-image {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: rem(132);
+    img {
+      width: 77%;
+      display: block;
+      margin-left: auto;
+    }
+  }
+
+  .about-us-content {
+    margin-left: 22.4%;
+    margin-bottom: rem(125);
+
+    h2 {
+      font-family: $font3;
+      font-size: rem(63);
+      line-height: rem(73.83);
+      letter-spacing: rem(3);
+      text-align: left;
+      color: var(--blue);
+    }
+
+    .about-us-body {
+      font-family: $font3;
+      width: 47.6vw;
+      font-size: rem(26);
+      line-height: rem(42);
+      text-align: left;
+      color: var(--light-gray);
+    }
+  }
+
+  .about-us-footer {
+    text-align: center;
+    margin-bottom: rem(138);
+
+    h2 {
+      font-family: $font3;
+      font-size: rem(63);
+      line-height: rem(73.83);
+      letter-spacing: rem(3);
+      text-align: left;
+      color: var(--blue);
+      margin-left: 8%;
+    }
+
+    .team-blocks {
+      display: flex;
+      justify-content: center;
+      padding: 0 8% 0 8%;
+
+      .team-block {
+        flex: 1;
+        text-align: center;
+        margin: 0 1rem; // Espace entre les blocs
+        width: 20vw;
+        img {
+          width: 100%;
+          aspect-ratio: 0.68;
+          margin-bottom: rem(31);
+          margin-top: rem(0);
+        }
+
+        h4 {
+          margin: 0 0 rem(27) 0;
+          font-family: $font3;
+          font-size: rem(35);
+          font-weight: 600;
+          line-height: rem(43.92);
+          text-align: left;
+        }
+
+        p {
+          font-family: $font3;
+          font-size: rem(20);
+          line-height: rem(38);
+          text-align: left;
+          color: var(--light-gray);
+        }
+      }
+    }
+  }
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+
+  .about-image {
+    flex: 1;
+    margin-right: 9.6%;
+    width: 34vw;
+    aspect-ratio: 0.66;
+    height: auto;
+  }
+
+  .about-content {
+    flex: 1;
+    h3 {
+      font-family: $font3;
+      font-size: rem(47);
+      font-weight: 600;
+      line-height: rem(58.98);
+      text-align: left;
+    }
+
+    p {
+      font-family: $font3;
+      font-size: rem(20);
+      line-height: rem(38);
+      text-align: left;
+      color: var(--light-gray);
+    }
+  }
+}

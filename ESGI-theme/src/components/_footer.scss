@@ -1,0 +1,106 @@
+.site-footer {
+  background-color: var(--blue); // Couleur de fond correspondante
+  color: var(--white); // Texte en blanc
+  padding: 0 8%; // Padding égal à 8% de la taille du footer
+
+  .footer-content {
+    margin: 0 0;
+    display: flex;
+    flex-direction: column;
+
+    .first-part {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .logo {
+        padding-top: rem(90); // rem(90) en dessous de la bordure supérieure
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: end;
+        width: 100%;
+        padding-top: rem(90); // rem(90) en dessous de la bordure supérieure
+
+        .contact {
+          margin-right: rem(100); // rem(100) entre les deux blocs
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          .role {
+            font-weight: bold;
+            margin-bottom: rem(10);
+          }
+
+          p {
+            margin: 0;
+            line-height: 1.5;
+          }
+
+          a {
+            color: var(--white);
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: rem(70); // rem(70) d'espace avec les blocs du dessus
+      margin-bottom: rem(80); // rem(80) de margin bottom avec le bas du footer
+
+      .footer-left {
+        p {
+          margin: 0;
+        }
+      }
+
+      .footer-right {
+        .social-link {
+          margin-left: rem(10);
+
+          img {
+            width: rem(20);
+            height: rem(20);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    .footer-content {
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
+
+        .contact {
+          margin-right: 0;
+          margin-bottom: rem(20);
+        }
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+
+        .footer-right {
+          margin-top: rem(20);
+
+          .social-link {
+            margin-left: 0;
+            margin-right: rem(10);
+          }
+        }
+      }
+    }
+  }
+}

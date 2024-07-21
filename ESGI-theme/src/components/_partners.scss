@@ -1,0 +1,38 @@
+$color-primary: #050a3a;
+
+.partners-container {
+  text-align: left;
+  padding-left: 8%; // Marge gauche de 8%
+  padding-right: 8%;
+  margin-top: rem(76);
+  margin-bottom: rem(200);
+
+  h1 {
+    font-family: $font3;
+    font-size: rem(58);
+    font-weight: 600;
+    line-height: rem(70);
+    text-align: left;
+    margin-bottom: rem(80);
+    color: $color-primary;
+  }
+}
+
+.partners-logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .partner-logo {
+    img {
+      max-width: rem(100);
+      max-height: rem(100);
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

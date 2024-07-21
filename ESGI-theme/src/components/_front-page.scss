@@ -1,0 +1,78 @@
+$color-primary: #050a3a;
+$color-secondary: #8a8a8a;
+
+.custom-page-container {
+  margin: 0;
+  padding: 0;
+}
+
+.page-title {
+  margin-bottom: rem(227);
+  padding-left: 8%;
+  font-family: $font3;
+  font-size: rem(84);
+  line-height: rem(98.44);
+  text-align: left;
+  color: $color-primary;
+}
+
+.image-block {
+  display: flex;
+  justify-content: end;
+  margin-bottom: rem(132);
+
+  .custom-image {
+    width: 77%;
+  }
+}
+
+.about-us-content {
+  margin-bottom: rem(139);
+  margin-left: 8%;
+
+  h2 {
+    font-family: $font3;
+    font-size: rem(63);
+    line-height: rem(73.83);
+    letter-spacing: rem(3);
+    text-align: left;
+    color: $color-primary;
+    margin-bottom: rem(16);
+  }
+
+  p {
+    font-family: $font3;
+    width: 47.6vw;
+    font-size: rem(26);
+    line-height: rem(42);
+    text-align: left;
+    color: $color-secondary;
+  }
+}
+
+.our-services {
+  h2 {
+    margin-bottom: rem(64);
+    font-family: $font3;
+    font-size: rem(63);
+    line-height: rem(73.83);
+    letter-spacing: rem(3);
+    text-align: left;
+    color: $color-primary;
+    margin-left: 8%;
+  }
+}
+
+.our-partners {
+  margin: 0 8% rem(269) 8%;
+
+  h2 {
+    margin-bottom: rem(64);
+    font-family: $font3;
+    font-size: rem(63);
+    line-height: rem(73.83);
+    letter-spacing: rem(3);
+    text-align: left;
+    color: $color-primary;
+  }
+}

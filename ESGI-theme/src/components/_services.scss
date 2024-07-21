@@ -1,0 +1,69 @@
+$color-primary: #050a3a;
+$color-secondary: #8a8a8a;
+
+.services-container {
+  text-align: left;
+  margin-top: rem(77);
+
+  h1 {
+    font-family: $font3;
+    font-size: rem(84);
+    font-weight: 600;
+    line-height: rem(105);
+    text-align: left;
+    margin-bottom: rem(80);
+    padding-left: 8%; // Marge gauche de 8%
+    padding-right: 8%;
+    color: $color-primary;
+  }
+
+  .services-title {
+    font-family: $font3;
+    font-size: rem(63);
+    font-weight: 600;
+    line-height: rem(80);
+    text-align: left;
+    margin-bottom: rem(16);
+    padding-left: 8%; // Marge gauche de 8%
+    padding-right: 8%;
+    letter-spacing: rem(3);
+    color: $color-primary;
+  }
+
+  .services-content {
+    font-size: 1.2rem;
+    text-align: left;
+    padding-left: 8%; // Marge gauche de 8%
+    padding-right: 8%;
+    margin-bottom: rem(125);
+
+    p {
+      color: $color-secondary;
+      font-family: $font3;
+      font-size: rem(26);
+      font-weight: 400;
+      line-height: rem(42);
+      text-align: left;
+    }
+  }
+}
+
+.services-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: rem(80);
+
+  .service-image {
+    margin: 0; // Removes any margin
+    padding: 0; // Removes any padding
+    flex: 1 0 24%; // Ensures each image takes up approximately 25% of the container width
+
+    img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1; // Ensures the image maintains a 1:1 aspect ratio
+      object-fit: cover; // Ensures the image covers the entire container without distortion
+    }
+  }
+}
