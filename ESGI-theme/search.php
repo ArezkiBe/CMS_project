@@ -1,58 +1,44 @@
-<?php get_header(); ?>
+<?php
+get_header();
 
-  <main id="main">
+if (isset($_GET['s'])) {
+    $search_query = sanitize_text_field($_GET['s']);
+} else {
+    $search_query = '';
+}
 
-      <header class="site-header">
-          <h1>
-              <?php printf( esc_html__( 'Résultats de la recherche pour : %s', 'ESGI_theme' ), '<span>' . get_search_query() . '</span>' ); ?>
-          </h1>
-      </header>
+$args = array(
+    's' => $search_query,
+    'post_type' => array('post', 'page')
+);
+$the_query = new WP_Query($args);
+?>
 
-      <?php
-      $search_query = get_search_query();
-      
-      $args_pages = array(
-          'post_type' => 'page',
-          's' => $search_query,
-          'posts_per_page' => -1
-      );
-      $pages_query = new WP_Query( $args_pages );
+<div class="search-results-container">
+    <h1>Search results for: <span><?php echo esc_html($search_query); ?></span></h1>
+    <div class="search-results">
+        <?php
+        if ($the_query->have_posts()) {
+            while ($the_query->have_posts()) {
+                $the_query->the_post();
+                ?>
+                <div class="search-result-item">
+                    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                    <p class="post-meta"><?php echo get_the_date(); ?></p>
+                    <p><?php echo get_the_excerpt(); ?></p>
+                </div>
+                <?php
+            }
+        } else {
+            ?>
+            <p>No results found.</p>
+            <?php
+        }
+        wp_reset_postdata();
+        ?>
+    </div>
+</div>
 
-      $args_posts = array(
-          'post_type' => 'post',
-          's' => $search_query,
-          'posts_per_page' => -1
-      );
-      $posts_query = new WP_Query( $args_posts );
-
-      if ( $pages_query->have_posts() ) : ?>
-          <section>
-              <h2><?php printf( esc_html__( '%d page(s) trouvée(s)', 'ESGI_theme' ), $pages_query->found_posts ); ?></h2>
-              <ul>
-                  <?php while ( $pages_query->have_posts() ) : $pages_query->the_post(); ?>
-                      <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-                  <?php endwhile; ?>
-              </ul>
-          </section>
-      <?php endif; 
-      wp_reset_postdata();
-
-      if ( $posts_query->have_posts() ) : ?>
-          <section>
-              <h2><?php printf( esc_html__( '%d article(s) trouvé(s)', 'ESGI_theme' ), $posts_query->found_posts ); ?></h2>
-              <ul>
-                  <?php while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
-                      <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-                  <?php endwhile; ?>
-              </ul>
-          </section>
-      <?php endif; 
-      wp_reset_postdata();
-
-      if ( !$pages_query->have_posts() && !$posts_query->have_posts() ) : ?>
-          <p><?php esc_html_e( 'Aucun résultat trouvé.', 'ESGI_theme' ); ?></p>
-      <?php endif; ?>
-
-  </main>
-
-<?php get_footer(); ?>
+<?php
+get_footer();
+?>

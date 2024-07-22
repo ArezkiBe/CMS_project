@@ -1,34 +1,33 @@
 .site-footer {
-  background-color: var(--blue); // Couleur de fond correspondante
-  color: var(--white); // Texte en blanc
-  padding: 0 8%; // Padding égal à 8% de la taille du footer
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 0 5%;
 
   .footer-content {
-    margin: 0 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
 
     .first-part {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
       width: 100%;
 
       .logo {
-        padding-top: rem(90); // rem(90) en dessous de la bordure supérieure
+        padding-top: rem(40);
       }
 
       .contact-info {
         display: flex;
-        justify-content: end;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
-        padding-top: rem(90); // rem(90) en dessous de la bordure supérieure
+        padding-top: rem(40);
 
         .contact {
-          margin-right: rem(100); // rem(100) entre les deux blocs
-
-          &:last-child {
-            margin-right: 0;
-          }
+          margin-right: 0;
+          margin-bottom: rem(20);
 
           .role {
             font-weight: bold;
@@ -50,10 +49,11 @@
 
     .footer-bottom {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
       width: 100%;
-      margin-top: rem(70); // rem(70) d'espace avec les blocs du dessus
-      margin-bottom: rem(80); // rem(80) de margin bottom avec le bas du footer
+      margin-top: rem(30);
+      margin-bottom: rem(30);
 
       .footer-left {
         p {
@@ -62,8 +62,12 @@
       }
 
       .footer-right {
+        display: flex;
+        margin-top: rem(20);
+
         .social-link {
-          margin-left: rem(10);
+          margin-left: 0;
+          margin-right: rem(10);
 
           img {
             width: rem(20);
@@ -75,31 +79,80 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .site-footer {
-    .footer-content {
-      .contact-info {
-        flex-direction: column;
-        align-items: center;
+    padding: 0 8%;
 
-        .contact {
-          margin-right: 0;
-          margin-bottom: rem(20);
+    .footer-content {
+      .first-part {
+        flex-direction: row;
+        align-items: flex-start;
+
+        .logo {
+          padding-top: rem(70);
+        }
+
+        .contact-info {
+          flex-direction: row;
+          justify-content: flex-end;
+          padding-top: rem(70);
+
+          .contact {
+            margin-right: rem(50);
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
         }
       }
 
       .footer-bottom {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
+        margin-top: rem(50);
+        margin-bottom: rem(50);
 
         .footer-right {
-          margin-top: rem(20);
+          margin-top: 0;
 
           .social-link {
-            margin-left: 0;
-            margin-right: rem(10);
+            margin-left: rem(10);
+            margin-right: 0;
           }
         }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .site-footer {
+    padding: 0 8%;
+
+    .footer-content {
+      .first-part {
+        .logo {
+          padding-top: rem(90);
+        }
+
+        .contact-info {
+          padding-top: rem(90);
+
+          .contact {
+            margin-right: rem(100);
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+
+      .footer-bottom {
+        margin-top: rem(70);
+        margin-bottom: rem(80);
       }
     }
   }

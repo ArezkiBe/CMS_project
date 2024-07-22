@@ -1,43 +1,11 @@
-<!-- <?php //get_header(); 
-      ?>
-
-<main id="site-content">
-  <div class="container">
-    <div class="row">
-      <div class="col-6 offset-3">
-
-      </div>
-    </div>
-  </div>
-
-  <?php
-  //get_template_part('template-parts/about-info');
-  ?>
-
-  <?php
-  //get_template_part('template-parts/services-parts');
-  ?>
-
-  <?php
-  //get_template_part('template-parts/partners-logos');
-  ?>
-
-
-</main>
-
-<?php //get_footer(); 
-?> -->
-
 <?php
-// Assurez-vous que ce fichier est placé dans le dossier racine de votre thème WordPress
 get_header();
 ?>
 
 <div class="custom-page-container">
-  <!-- Titre de la Page -->
   <h1 class="page-title">
     <?php
-    $home_post = get_post(7);
+    $home_post = get_post(32);
     if ($home_post) {
       echo esc_html($home_post->post_title);
     }
@@ -56,7 +24,7 @@ get_header();
   <!-- Contenu de la page "About Us" (post ID 54) -->
   <div class="about-us-content">
     <?php
-    $about_us_post = get_post(54);
+    $about_us_post = get_post(35);
     if ($about_us_post) {
       echo '<h2>' . esc_html($about_us_post->post_title) . '</h2>';
       echo apply_filters('the_content', $about_us_post->post_content);

@@ -3,8 +3,8 @@ $color-white: #ffffff;
 $color-highlight: #ff007f;
 
 .site-header {
-  background-color: $color-primary; // Couleur de fond correspondante
-  padding: rem(48) 8% rem(45) 8%; // Marges de 8% sur les côtés et rem(48) en haut et rem(45) en bas
+  background-color: $color-primary;
+  padding: rem(20) 5% rem(20) 5%;
 
   .header-content {
     display: flex;
@@ -15,17 +15,14 @@ $color-highlight: #ff007f;
 
   .logo {
     img {
-      width: rem(133);
-      height: rem(40);
-      top: rem(50);
-      left: rem(160);
-      gap: rem(0);
-      opacity: rem(0);
+      width: rem(100);
+      height: auto;
     }
   }
 
   .burger-menu {
     cursor: pointer;
+    display: block;
   }
 
   .nav-menu {
@@ -34,6 +31,10 @@ $color-highlight: #ff007f;
     flex-direction: column;
     justify-content: center;
     box-sizing: border-box;
+    
+    &.open {
+      display: flex;
+    }
 
     .nav-header {
       display: flex;
@@ -46,12 +47,8 @@ $color-highlight: #ff007f;
         flex-direction: column;
 
         img {
-          width: rem(133);
-          height: rem(40);
-          top: rem(50);
-          left: rem(160);
-          gap: rem(0);
-          opacity: rem(0);
+          width: rem(100);
+          height: auto;
         }
 
         p {
@@ -72,8 +69,8 @@ $color-highlight: #ff007f;
       align-items: end;
       list-style: none;
       padding: 0;
-      margin-top: rem(37); // rem(37) d'espace entre la première ligne et la liste
-      margin-bottom: rem(30);
+      margin-top: rem(20);
+      margin-bottom: rem(20);
 
       .nav-item {
         margin-bottom: rem(15);
@@ -81,9 +78,9 @@ $color-highlight: #ff007f;
         a {
           color: $color-white;
           font-family: $font3;
-          font-size: rem(50);
+          font-size: rem(24);
           font-weight: 600;
-          line-height: rem(68);
+          line-height: rem(32);
           text-align: left;
           position: relative;
           text-decoration: none;
@@ -97,14 +94,80 @@ $color-highlight: #ff007f;
             bottom: rem(-5);
             height: rem(2);
             width: 100%;
-            background-color: $color-highlight; // Couleur de soulignement
+            background-color: $color-highlight;
           }
         }
       }
     }
   }
+}
 
-  .nav-menu.open {
-    display: flex;
+@media (min-width: 768px) {
+  .site-header {
+    padding: rem(40) 8% rem(40) 8%;
+
+    .header-content {
+      .logo {
+        img {
+          width: rem(120);
+        }
+      }
+
+      .burger-menu {
+        cursor: pointer;
+        display: block;
+      }
+
+      .nav-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+        .nav-header {
+          display: none;
+        }
+
+        .nav-links {
+          flex-direction: row;
+          margin-top: 0;
+          margin-bottom: 0;
+
+          .nav-item {
+            margin: 0 rem(20);
+
+            a {
+              font-size: rem(18);
+              line-height: rem(24);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .site-header {
+    padding: rem(48) 8% rem(45) 8%;
+
+    .header-content {
+      .logo {
+        img {
+          width: rem(133);
+        }
+      }
+
+      .nav-menu {
+        .nav-links {
+          .nav-item {
+            a {
+              font-size: rem(20);
+              line-height: rem(26);
+            }
+          }
+        }
+      }
+    }
   }
 }

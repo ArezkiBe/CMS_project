@@ -1,50 +1,51 @@
 .about-us-container {
   display: flex;
   flex-direction: column;
+  padding-left: 5%;
+  padding-right: 5%;
 
   h1 {
     font-family: $font3;
-    font-size: rem(84);
+    font-size: rem(36);
     font-weight: 600;
-    line-height: rem(105);
+    line-height: rem(45);
     text-align: left;
-    margin-bottom: rem(128);
-    margin-top: rem(77);
-    padding-left: 8%; // Marge gauche de 8%
-    padding-right: 8%;
+    margin-bottom: rem(64);
+    margin-top: rem(40);
     color: var(--blue);
   }
 
   .about-us-image {
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
-    margin-bottom: rem(132);
+    margin-bottom: rem(50);
+
     img {
-      width: 77%;
+      width: 100%;
       display: block;
-      margin-left: auto;
+      margin-left: 0;
     }
   }
 
   .about-us-content {
-    margin-left: 22.4%;
-    margin-bottom: rem(125);
+    margin-left: 0;
+    margin-bottom: rem(64);
 
     h2 {
       font-family: $font3;
-      font-size: rem(63);
-      line-height: rem(73.83);
-      letter-spacing: rem(3);
+      font-size: rem(28);
+      line-height: rem(34);
+      letter-spacing: rem(1.5);
       text-align: left;
       color: var(--blue);
     }
 
     .about-us-body {
       font-family: $font3;
-      width: 47.6vw;
-      font-size: rem(26);
-      line-height: rem(42);
+      width: 100%;
+      font-size: rem(18);
+      line-height: rem(30);
       text-align: left;
       color: var(--light-gray);
     }
@@ -52,49 +53,49 @@
 
   .about-us-footer {
     text-align: center;
-    margin-bottom: rem(138);
+    margin-bottom: rem(64);
 
     h2 {
       font-family: $font3;
-      font-size: rem(63);
-      line-height: rem(73.83);
-      letter-spacing: rem(3);
-      text-align: left;
-      color: var(--blue);
-      margin-left: 8%;
+      font-size: rem(28);
+      line-height: rem(34);
+      letter-spacing: rem(1.5);
+      text-align: center;
+      margin-left: 0;
     }
 
     .team-blocks {
       display: flex;
-      justify-content: center;
-      padding: 0 8% 0 8%;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
 
       .team-block {
-        flex: 1;
+        width: 100%;
         text-align: center;
-        margin: 0 1rem; // Espace entre les blocs
-        width: 20vw;
+        margin: rem(20) 0;
+
         img {
-          width: 100%;
+          width: 80%;
           aspect-ratio: 0.68;
-          margin-bottom: rem(31);
+          margin-bottom: rem(20);
           margin-top: rem(0);
         }
 
         h4 {
-          margin: 0 0 rem(27) 0;
+          margin: 0 0 rem(20) 0;
           font-family: $font3;
-          font-size: rem(35);
+          font-size: rem(24);
           font-weight: 600;
-          line-height: rem(43.92);
-          text-align: left;
+          line-height: rem(30);
+          text-align: center;
         }
 
         p {
           font-family: $font3;
-          font-size: rem(20);
-          line-height: rem(38);
-          text-align: left;
+          font-size: rem(16);
+          line-height: rem(24);
+          text-align: center;
           color: var(--light-gray);
         }
       }
@@ -104,32 +105,210 @@
 
 .about-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
 
   .about-image {
-    flex: 1;
-    margin-right: 9.6%;
-    width: 34vw;
+    width: 80%;
     aspect-ratio: 0.66;
     height: auto;
+    margin-bottom: rem(20);
   }
 
   .about-content {
-    flex: 1;
+    width: 100%;
+    text-align: center;
+
     h3 {
       font-family: $font3;
-      font-size: rem(47);
+      font-size: rem(28);
       font-weight: 600;
-      line-height: rem(58.98);
-      text-align: left;
+      line-height: rem(35);
     }
 
     p {
       font-family: $font3;
-      font-size: rem(20);
-      line-height: rem(38);
-      text-align: left;
+      font-size: rem(16);
+      line-height: rem(24);
       color: var(--light-gray);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .about-us-container {
+    padding-left: 8%;
+    padding-right: 8%;
+
+    h1 {
+      font-size: rem(48);
+      line-height: rem(60);
+      margin-bottom: rem(96);
+      margin-top: rem(60);
+    }
+
+    .about-us-image {
+      justify-content: end;
+      margin-bottom: rem(80);
+
+      img {
+        width: 77%;
+        margin-left: auto;
+      }
+    }
+
+    .about-us-content {
+      margin-left: 22.4%;
+      margin-bottom: rem(80);
+
+      h2 {
+        font-size: rem(36);
+        line-height: rem(44);
+        letter-spacing: rem(2);
+      }
+
+      .about-us-body {
+        width: 47.6vw;
+        font-size: rem(22);
+        line-height: rem(36);
+      }
+    }
+
+    .about-us-footer {
+      margin-bottom: rem(80);
+
+      h2 {
+        font-size: rem(36);
+        line-height: rem(44);
+        letter-spacing: rem(2);
+        text-align: left;
+        margin-left: 8%;
+      }
+
+      .team-blocks {
+        flex-direction: row;
+        justify-content: center;
+        padding: 0 8% 0 8%;
+
+        .team-block {
+          width: 20vw;
+          margin: 0 1rem;
+
+          img {
+            width: 100%;
+            margin-bottom: rem(31);
+          }
+
+          h4 {
+            font-size: rem(24);
+            line-height: rem(30);
+            text-align: left;
+          }
+
+          p {
+            font-size: rem(20);
+            line-height: rem(38);
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+  .about-container {
+    flex-direction: row;
+
+    .about-image {
+      flex: 1;
+      margin-right: 9.6%;
+      width: 34vw;
+    }
+
+    .about-content {
+      flex: 1;
+      text-align: left;
+
+      h3 {
+        font-size: rem(36);
+        line-height: rem(45);
+      }
+
+      p {
+        font-size: rem(20);
+        line-height: rem(30);
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .about-us-container {
+    h1 {
+      font-size: rem(84);
+      line-height: rem(105);
+      margin-bottom: rem(128);
+      margin-top: rem(77);
+    }
+
+    .about-us-image {
+      margin-bottom: rem(132);
+    }
+
+    .about-us-content {
+      margin-bottom: rem(125);
+
+      h2 {
+        font-size: rem(63);
+        line-height: rem(73.83);
+        letter-spacing: rem(3);
+      }
+
+      .about-us-body {
+        font-size: rem(26);
+        line-height: rem(42);
+      }
+    }
+
+    .about-us-footer {
+      margin-bottom: rem(138);
+
+      h2 {
+        font-size: rem(63);
+        line-height: rem(73.83);
+        letter-spacing: rem(3);
+      }
+
+      .team-blocks {
+        .team-block {
+          h4 {
+            font-size: rem(35);
+            line-height: rem(43.92);
+          }
+
+          p {
+            font-size: rem(20);
+            line-height: rem(38);
+          }
+        }
+      }
+    }
+  }
+
+  .about-container {
+    .about-image {
+      width: 34vw;
+    }
+
+    .about-content {
+      h3 {
+        font-size: rem(47);
+        line-height: rem(58.98);
+      }
+
+      p {
+        font-size: rem(20);
+        line-height: rem(38);
+      }
     }
   }
 }

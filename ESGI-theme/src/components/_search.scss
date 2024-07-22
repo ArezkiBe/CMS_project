@@ -1,0 +1,137 @@
+.search-results-container {
+  padding: rem(77) 8% 0 8%;
+  h1 {
+    font-family: $font3;
+    font-size: rem(36);
+    font-weight: 600;
+    line-height: rem(45);
+    text-align: left;
+    margin-bottom: rem(64);
+    margin-top: rem(40);
+    color: var(--blue);
+    span {
+      color: var(--purple);
+    }
+  }
+
+  .search-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(rem(300), 1fr));
+    gap: rem(20);
+    margin-bottom: rem(137);
+
+    .search-result-item {
+      padding: rem(20);
+      border: rem(1) solid var(--border-color);
+      border-radius: rem(5);
+      transition: box-shadow 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 rem(4) rem(8) rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        font-family: $font3;
+        font-size: rem(35);
+        font-weight: 600;
+        line-height: rem(44);
+        text-align: left;
+        color: var(--dark-blue);
+
+        a {
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .post-meta {
+        font-family: $font3;
+        font-size: rem(20);
+        font-weight: 800;
+        line-height: rem(25);
+        letter-spacing: rem(1);
+        text-align: left;
+      }
+
+      p {
+        font-family: $font3;
+        width: 100%;
+        font-size: rem(18);
+        line-height: rem(30);
+        text-align: left;
+        color: var(--light-gray);
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .search-results-container {
+    padding: rem(50) 5% 0 5%;
+    h1 {
+      font-size: rem(30);
+      margin-bottom: rem(50);
+      margin-top: rem(30);
+    }
+
+    .search-results {
+      gap: rem(15);
+      margin-bottom: rem(100);
+
+      .search-result-item {
+        padding: rem(15);
+        h2 {
+          font-size: rem(30);
+          line-height: rem(38);
+        }
+
+        .post-meta {
+          font-size: rem(18);
+          line-height: rem(22);
+        }
+
+        p {
+          font-size: rem(16);
+          line-height: rem(28);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .search-results-container {
+    padding: rem(30) 3% 0 3%;
+    h1 {
+      font-size: rem(25);
+      margin-bottom: rem(40);
+      margin-top: rem(20);
+    }
+
+    .search-results {
+      gap: rem(10);
+      margin-bottom: rem(80);
+
+      .search-result-item {
+        padding: rem(10);
+        h2 {
+          font-size: rem(25);
+          line-height: rem(32);
+        }
+
+        .post-meta {
+          font-size: rem(16);
+          line-height: rem(20);
+        }
+
+        p {
+          font-size: rem(14);
+          line-height: rem(24);
+        }
+      }
+    }
+  }
+}

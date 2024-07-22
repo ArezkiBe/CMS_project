@@ -1,32 +1,32 @@
 $color-white: #ffffff;
+$color-grey: #FFFFFF4C;
 
 .search-container {
   position: relative;
   width: 100%;
-  max-width: rem(1000);
+  padding: rem(8); // Padding ajouté pour les petits écrans
   background-color: inherit; // Assure que le fond soit le même que celui de la page
 
   .search-input {
     width: 100%;
-    padding: rem(10);
+    padding: rem(8); // Padding réduit pour les petits écrans
     border: none;
     outline: none;
     background: inherit; // Assure que le fond soit le même que celui de la page
     color: $color-white; // Texte en blanc
-  }
 
-  .search-input::placeholder {
-    font-family: $font3;
-    font-size: rem(20);
-    font-weight: 400;
-    line-height: rem(38);
-    text-align: left;
-    margin-bottom: rem(10);
+    &::placeholder {
+      font-family: $font3;
+      font-size: rem(16); // Taille réduite pour les petits écrans
+      font-weight: 400;
+      line-height: rem(24); // Hauteur de ligne réduite pour les petits écrans
+      text-align: left;
+    }
   }
 
   .search-icon-button {
     position: absolute;
-    right: rem(10);
+    right: rem(8); // Position ajustée pour les petits écrans
     top: 50%;
     transform: translateY(-50%);
     background: none;
@@ -36,32 +36,36 @@ $color-white: #ffffff;
   }
 
   .search-icon {
-    width: rem(16);
-    height: rem(17);
-    top: rem(11);
+    width: rem(14); // Taille réduite pour les petits écrans
+    height: rem(14); // Taille réduite pour les petits écrans
     padding: rem(0) rem(0) rem(1) rem(0);
-    gap: rem(0);
-    opacity: rem(0);
+    opacity: rem(0); // Opacité ajustée si nécessaire
   }
 
   .search-underline {
-    height: rem(2);
-    top: rem(46);
-    left: rem(1);
-    gap: rem(0);
-    border: rem(1) rem(0) rem(0) rem(0);
-    opacity: 0;
-    border: rem(1) solid $color-white;
+    height: rem(1); // Hauteur réduite pour les petits écrans
+    border: rem(1) solid $color-grey;
+    opacity: 1; // Assurer que la bordure soit visible
   }
 }
 
-// Responsive design
-@media (max-width: 768px) {
+// Media queries pour les écrans plus larges
+@media (min-width: 768px) {
   .search-container {
-    max-width: rem(200);
+    max-width: rem(300); // Largeur ajustée pour les tablettes et écrans plus grands
 
     .search-input {
-      max-width: rem(200);
+      max-width: rem(300); // Largeur ajustée pour les tablettes et écrans plus grands
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .search-container {
+    max-width: rem(1000); // Largeur originale pour les écrans de bureau
+
+    .search-input {
+      max-width: rem(1000); // Largeur originale pour les écrans de bureau
     }
   }
 }

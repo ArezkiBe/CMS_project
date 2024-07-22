@@ -3,46 +3,46 @@ $color-secondary: #8a8a8a;
 
 .services-container {
   text-align: left;
-  margin-top: rem(77);
+  margin-top: rem(40);
 
   h1 {
     font-family: $font3;
-    font-size: rem(84);
+    font-size: rem(36);
     font-weight: 600;
-    line-height: rem(105);
+    line-height: rem(45);
     text-align: left;
-    margin-bottom: rem(80);
-    padding-left: 8%; // Marge gauche de 8%
-    padding-right: 8%;
+    margin-bottom: rem(40);
+    padding-left: 5%;
+    padding-right: 5%;
     color: $color-primary;
   }
 
   .services-title {
     font-family: $font3;
-    font-size: rem(63);
+    font-size: rem(28);
     font-weight: 600;
-    line-height: rem(80);
+    line-height: rem(35);
     text-align: left;
     margin-bottom: rem(16);
-    padding-left: 8%; // Marge gauche de 8%
-    padding-right: 8%;
-    letter-spacing: rem(3);
+    padding-left: 5%;
+    padding-right: 5%;
+    letter-spacing: rem(1.5);
     color: $color-primary;
   }
 
   .services-content {
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: left;
-    padding-left: 8%; // Marge gauche de 8%
-    padding-right: 8%;
-    margin-bottom: rem(125);
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: rem(64);
 
     p {
       color: $color-secondary;
       font-family: $font3;
-      font-size: rem(26);
+      font-size: rem(18);
       font-weight: 400;
-      line-height: rem(42);
+      line-height: rem(30);
       text-align: left;
     }
   }
@@ -50,20 +50,113 @@ $color-secondary: #8a8a8a;
 
 .services-images {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: rem(80);
+  margin-bottom: rem(40);
 
   .service-image {
-    margin: 0; // Removes any margin
-    padding: 0; // Removes any padding
-    flex: 1 0 24%; // Ensures each image takes up approximately 25% of the container width
+    width: 80%;
+    margin-bottom: rem(20);
+    padding: 0;
 
     img {
       width: 100%;
       height: auto;
-      aspect-ratio: 1 / 1; // Ensures the image maintains a 1:1 aspect ratio
-      object-fit: cover; // Ensures the image covers the entire container without distortion
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .services-container {
+    margin-top: rem(60);
+
+    h1 {
+      font-size: rem(48);
+      line-height: rem(60);
+      margin-bottom: rem(60);
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+
+    .services-title {
+      font-size: rem(36);
+      line-height: rem(44);
+      margin-bottom: rem(16);
+      padding-left: 8%;
+      padding-right: 8%;
+      letter-spacing: rem(2);
+    }
+
+    .services-content {
+      font-size: 1.1rem;
+      padding-left: 8%;
+      padding-right: 8%;
+      margin-bottom: rem(80);
+
+      p {
+        font-size: rem(22);
+        line-height: rem(36);
+      }
+    }
+  }
+
+  .services-images {
+    flex-direction: row;
+    margin-bottom: rem(60);
+
+    .service-image {
+      flex: 1 0 25%;
+      margin-bottom: 0;
+      margin-right: rem(20);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .services-container {
+    margin-top: rem(77);
+
+    h1 {
+      font-size: rem(84);
+      line-height: rem(105);
+      margin-bottom: rem(80);
+    }
+
+    .services-title {
+      font-size: rem(63);
+      line-height: rem(80);
+      margin-bottom: rem(16);
+      letter-spacing: rem(3);
+    }
+
+    .services-content {
+      font-size: 1.2rem;
+      margin-bottom: rem(125);
+
+      p {
+        font-size: rem(26);
+        line-height: rem(42);
+      }
+    }
+  }
+
+  .services-images {
+    margin-bottom: rem(80);
+
+    .service-image {
+      flex: 1 0 24%;
+      margin-right: rem(20);
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }
